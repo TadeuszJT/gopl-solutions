@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="robots" content="NOODP">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="fb:admins" content="100000730726880" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="Alex Jones&#039; Infowars: There&#039;s a war on for your mind!" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/wp-content/themes/infowars-sitegoals/images/logo.png" />
+<meta name="p:domain_verify" content="17524d28613d659f78532053a49ecd5b" />
+<link rel="profile" href="//gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.infowars.com/xmlrpc.php">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.css">
+<style type="text/css">
+  @font-face {
+    font-family: 'flexslider-icon';
+    src:url('/wp-content/themes/infowars-sitegoals/fonts/flexslider-icon.eot');
+    src:url('/wp-content/themes/infowars-sitegoals/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+      url('/wp-content/themes/infowars-sitegoals/fonts/flexslider-icon.woff') format('woff'),
+      url('/wp-content/themes/infowars-sitegoals/fonts/flexslider-icon.ttf') format('truetype'),
+      url('/wp-content/themes/infowars-sitegoals/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="/js/gdpr-cookie-consent.js"></script>
+
+<title>Alex Jones&#039; Infowars: There&#039;s a war on for your mind!</title>
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="https://www.infowars.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Comments Feed" href="https://www.infowars.com/comments/feed/" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.infowars.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='formidable-css' href='https://www.infowars.com/wp-content/plugins/formidable/css/formidableforms.css?ver=3302307' type='text/css' media='all' />
+<link rel='stylesheet' id='printomatic-css-css' href='https://www.infowars.com/wp-content/plugins/print-o-matic/css/style.css?ver=1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-lightbox-featherlight-css' href='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/featherlight/featherlight.min.css?ver=2.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-lightbox-featherlight-gallery-css' href='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/featherlight/featherlight.gallery.min.css?ver=2.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-email-css' href='https://www.infowars.com/wp-content/plugins/wp-email/email-css.css?ver=2.67.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-polls-css' href='https://www.infowars.com/wp-content/plugins/wp-polls/polls-css.css?ver=2.73.8' type='text/css' media='all' />
+<style id='wp-polls-inline-css' type='text/css'>
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 8px;
+	line-height: 10px;
+	height: 10px;
+	background-image: url('https://www.infowars.com/wp-content/plugins/wp-polls/images/default_gradient/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style>
+<link rel='stylesheet' id='infowars-sitegoals-style-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/style.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='pure-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/css/pure-min.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/css/main.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='pure-grid-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/css/grid.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/fancybox/jquery.fancybox-1.3.4.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='flexslider-css-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/flexslider/flexslider.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='infowars-popin-video-css-css' href='https://www.infowars.com/wp-content/themes/infowars-sitegoals/css/popin-video.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='slb_core-css' href='https://www.infowars.com/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.6.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.infowars.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/featherlight/featherlight.min.js?ver=2.0.4'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/featherlight/featherlight.gallery.min.js?ver=2.0.4'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/infinitescroll/infinite-scroll.pkgd.min.js?ver=4.9.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rlArgs = {"script":"featherlight","selector":"lightbox","customEvents":"","activeGalleries":"1","openSpeed":"250","closeSpeed":"250","closeOnClick":"background","closeOnEsc":"1","galleryFadeIn":"100","galleryFadeOut":"300","woocommerce_gallery":"0","ajaxurl":"https:\/\/www.infowars.com\/wp-admin\/admin-ajax.php","nonce":"678f1f6af8"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/responsive-lightbox/js/front.js?ver=2.0.4'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/js/jquery.sticky-kit.min.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/fancybox/jquery.fancybox-1.3.4.pack.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/js/main.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/flexslider/jquery.flexslider.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/iframetracker/jquery.iframetracker.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/shorten/jquery.shorten.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/expander/jquery.expander.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.6/slick.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/trunk8/trunk8.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/vendor/akamai/amp.premier/amp.premier.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/js/popin-video.js?ver=4.9.6'></script>
+<link rel='https://api.w.org/' href='https://www.infowars.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.infowars.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.infowars.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.9.6" />
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"GQZnj1aEsk00EH", domain:"infowars.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=GQZnj1aEsk00EH" style="display:none" height="1" width="1" alt="" /></noscript>
+
+<style>
+.twitter-tweet{display:block!important;}
+@media print {.nc_socialPanel{display:none!important;}}
+</style>
+<style>button#responsive-menu-button,#responsive-menu-container{display: none;-webkit-text-size-adjust: 100%}@media screen and (max-width: 768px){#responsive-menu-container{display: block}#responsive-menu-container{position: fixed;top: 0;bottom: 0;z-index: 99998;padding-bottom: 5px;margin-bottom: -5px;outline: 1px solid transparent;overflow-y: auto;overflow-x: hidden}#responsive-menu-container .responsive-menu-search-box{width: 100%;padding: 0 2%;border-radius: 2px;height: 50px;-webkit-appearance: none}#responsive-menu-container.push-left,#responsive-menu-container.slide-left{transform: translateX(-100%);-ms-transform: translateX(-100%);-webkit-transform: translateX(-100%);-moz-transform: translateX(-100%)}.responsive-menu-open #responsive-menu-container.push-left,.responsive-menu-open #responsive-menu-container.slide-left{transform: translateX(0);-ms-transform: translateX(0);-webkit-transform: translateX(0);-moz-transform: translateX(0)}#responsive-menu-container.push-top,#responsive-menu-container.slide-top{transform: translateY(-100%);-ms-transform: translateY(-100%);-webkit-transform: translateY(-100%);-moz-transform: translateY(-100%)}.responsive-menu-open #responsive-menu-container.push-top,.responsive-menu-open #responsive-menu-container.slide-top{transform: translateY(0);-ms-transform: translateY(0);-webkit-transform: translateY(0);-moz-transform: translateY(0)}#responsive-menu-container.push-right,#responsive-menu-container.slide-right{transform: translateX(100%);-ms-transform: translateX(100%);-webkit-transform: translateX(100%);-moz-transform: translateX(100%)}.responsive-menu-open #responsive-menu-container.push-right,.responsive-menu-open #responsive-menu-container.slide-right{transform: translateX(0);-ms-transform: translateX(0);-webkit-transform: translateX(0);-moz-transform: translateX(0)}#responsive-menu-container.push-bottom,#responsive-menu-container.slide-bottom{transform: translateY(100%);-ms-transform: translateY(100%);-webkit-transform: translateY(100%);-moz-transform: translateY(100%)}.responsive-menu-open #responsive-menu-container.push-bottom,.responsive-menu-open #responsive-menu-container.slide-bottom{transform: translateY(0);-ms-transform: translateY(0);-webkit-transform: translateY(0);-moz-transform: translateY(0)}#responsive-menu-container,#responsive-menu-container:before,#responsive-menu-container:after,#responsive-menu-container *,#responsive-menu-container *:before,#responsive-menu-container *:after{box-sizing: border-box;margin: 0;padding: 0}#responsive-menu-container #responsive-menu-search-box,#responsive-menu-container #responsive-menu-additional-content,#responsive-menu-container #responsive-menu-title{padding: 25px 5%}#responsive-menu-container #responsive-menu,#responsive-menu-container #responsive-menu ul{width: 100%}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu{display: none}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu.responsive-menu-submenu-open{display: block}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-1 a.responsive-menu-item-link{padding-left: 10%}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-2 a.responsive-menu-item-link{padding-left: 15%}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-3 a.responsive-menu-item-link{padding-left: 20%}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-4 a.responsive-menu-item-link{padding-left: 25%}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-5 a.responsive-menu-item-link{padding-left: 30%}#responsive-menu-container li.responsive-menu-item{width: 100%;list-style: none}#responsive-menu-container li.responsive-menu-item a{width: 100%;display: block;text-decoration: none;padding: 0 5%;position: relative}#responsive-menu-container li.responsive-menu-item a .fa{margin-right: 15px}#responsive-menu-container li.responsive-menu-item a .responsive-menu-subarrow{position: absolute;top: 0;bottom: 0;text-align: center;overflow: hidden}#responsive-menu-container li.responsive-menu-item a .responsive-menu-subarrow.fa{margin-right: 0}button#responsive-menu-button .responsive-menu-button-icon-inactive{display: none}button#responsive-menu-button{z-index: 99999;display: none;overflow: hidden;outline: none}button#responsive-menu-button img{max-width: 100%}.responsive-menu-label{display: inline-block;font-weight: 600;margin: 0 5px;vertical-align: middle}.responsive-menu-label .responsive-menu-button-text-open{display: none}.responsive-menu-accessible{display: inline-block}.responsive-menu-accessible .responsive-menu-box{display: inline-block;vertical-align: middle}.responsive-menu-label.responsive-menu-label-top,.responsive-menu-label.responsive-menu-label-bottom{display: block;margin: 0 auto}button#responsive-menu-button{padding: 0 0;display: inline-block;cursor: pointer;transition-property: opacity, filter;transition-duration: 0.15s;transition-timing-function: linear;font: inherit;color: inherit;text-transform: none;background-color: transparent;border: 0;margin: 0;overflow: visible}.responsive-menu-box{width: 30px;height: 25px;display: inline-block;position: relative}.responsive-menu-inner{display: block;top: 50%;margin-top: -2.5px}.responsive-menu-inner,.responsive-menu-inner::before,.responsive-menu-inner::after{width: 30px;height: 5px;background-color: #ffffff;border-radius: 4px;position: absolute;transition-property: transform;transition-duration: 0.15s;transition-timing-function: ease}.responsive-menu-open .responsive-menu-inner,.responsive-menu-open .responsive-menu-inner::before,.responsive-menu-open .responsive-menu-inner::after{background-color: #ffffff}button#responsive-menu-button:hover .responsive-menu-inner,button#responsive-menu-button:hover .responsive-menu-inner::before,button#responsive-menu-button:hover .responsive-menu-inner::after,button#responsive-menu-button:hover .responsive-menu-open .responsive-menu-inner,button#responsive-menu-button:hover .responsive-menu-open .responsive-menu-inner::before,button#responsive-menu-button:hover .responsive-menu-open .responsive-menu-inner::after,button#responsive-menu-button:focus .responsive-menu-inner,button#responsive-menu-button:focus .responsive-menu-inner::before,button#responsive-menu-button:focus .responsive-menu-inner::after,button#responsive-menu-button:focus .responsive-menu-open .responsive-menu-inner,button#responsive-menu-button:focus .responsive-menu-open .responsive-menu-inner::before,button#responsive-menu-button:focus .responsive-menu-open .responsive-menu-inner::after{background-color: #ffffff}.responsive-menu-inner::before,.responsive-menu-inner::after{content: "";display: block}.responsive-menu-inner::before{top: -10px}.responsive-menu-inner::after{bottom: -10px}.responsive-menu-boring .responsive-menu-inner,.responsive-menu-boring .responsive-menu-inner::before,.responsive-menu-boring .responsive-menu-inner::after{transition-property: none}.responsive-menu-boring.is-active .responsive-menu-inner{transform: rotate(45deg)}.responsive-menu-boring.is-active .responsive-menu-inner::before{top: 0;opacity: 0}.responsive-menu-boring.is-active .responsive-menu-inner::after{bottom: 0;transform: rotate(-90deg)}button#responsive-menu-button{width: 30px;height: 30px;position: absolute;top: 10px;right: 5%}button#responsive-menu-button .responsive-menu-box{color: #ffffff}.responsive-menu-open button#responsive-menu-button .responsive-menu-box{color: #ffffff}.responsive-menu-label{color: #ffffff;font-size: 13px;line-height: 13px}button#responsive-menu-button{display: inline-block;transition: transform 0.5s, background-color 1s}#responsive-menu-container{width: 75%;left: 0;transition: transform 0.5s;text-align: left;background: #43494c}#responsive-menu-container #responsive-menu-wrapper{background: #43494c}#responsive-menu-container #responsive-menu-additional-content{color: #ffffff}#responsive-menu-container .responsive-menu-search-box{background: #ffffff;border: 2px solid #dadada;color: #333333}#responsive-menu-container .responsive-menu-search-box:-ms-input-placeholder{color: #c7c7cd}#responsive-menu-container .responsive-menu-search-box::-webkit-input-placeholder{color: #c7c7cd}#responsive-menu-container .responsive-menu-search-box:-moz-placeholder{color: #c7c7cd;opacity: 1}#responsive-menu-container .responsive-menu-search-box::-moz-placeholder{color: #c7c7cd;opacity: 1}#responsive-menu-container .responsive-menu-item-link,#responsive-menu-container #responsive-menu-title,#responsive-menu-container .responsive-menu-subarrow{transition: background-color 1s, border-color 1s, color 1s}#responsive-menu-container #responsive-menu-title{background-color: #43494c;color: #ffffff;font-size: 18px}#responsive-menu-container #responsive-menu-title a{color: #ffffff;font-size: 18px;text-decoration: none}#responsive-menu-container #responsive-menu-title a:hover{color: #ffffff}#responsive-menu-container #responsive-menu-title:hover{background-color: #43494c;color: #ffffff}#responsive-menu-container #responsive-menu-title:hover a{color: #ffffff}#responsive-menu-container #responsive-menu-title #responsive-menu-title-image{display: inline-block;vertical-align: middle}#responsive-menu-container #responsive-menu-title #responsive-menu-title-image img{}#responsive-menu-container #responsive-menu > li.responsive-menu-item:first-child > a{border-top: 1px solid #3c3c3c}#responsive-menu-container #responsive-menu li.responsive-menu-item .responsive-menu-item-link{font-size: 18px}#responsive-menu-container #responsive-menu li.responsive-menu-item a{height: 44px;line-height: 44px;border-bottom: 1px solid #3c3c3c;color: #ffffff;background-color: #43494c}#responsive-menu-container #responsive-menu li.responsive-menu-item a:hover{color: #ffffff;background-color: #3c3c3c;border-color: #3c3c3c}#responsive-menu-container #responsive-menu li.responsive-menu-item a:hover .responsive-menu-subarrow{color: #ffffff;border-color: #3c3c3c;background-color: #3c3c3c}#responsive-menu-container #responsive-menu li.responsive-menu-item a:hover .responsive-menu-subarrow.responsive-menu-subarrow-active{color: #ffffff;border-color: #3f3f3f;background-color: #3f3f3f}#responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow{right: 0;height: 44px;line-height: 44px;width: 44px;color: #ffffff;border-left: 1px solid #3c3c3c;background-color: #43494c}#responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active{color: #ffffff;border-color: #212121;background-color: #212121}#responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active:hover{color: #ffffff;border-color: #3f3f3f;background-color: #3f3f3f}#responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow:hover{color: #ffffff;border-color: #3c3c3c;background-color: #3c3c3c}#responsive-menu-container #responsive-menu li.responsive-menu-current-item > .responsive-menu-item-link{background-color: #43494c;color: #ffffff;border-color: #212121}#responsive-menu-container #responsive-menu li.responsive-menu-current-item > .responsive-menu-item-link:hover{background-color: #43494c;color: #ffffff;border-color: #3f3f3f}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu > li.responsive-menu-item:first-child > a{border-top: 1px solid #3c3c3c}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item .responsive-menu-item-link{font-size: 18px}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a{height: 44px;line-height: 44px;border-bottom: 1px solid #3c3c3c;color: #ffffff;background-color: #43494c}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a:hover{color: #ffffff;background-color: #3c3c3c;border-color: #3c3c3c}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a:hover .responsive-menu-subarrow{color: #ffffff;border-color: #3c3c3c;background-color: #3c3c3c}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a:hover .responsive-menu-subarrow.responsive-menu-subarrow-active{color: #ffffff;border-color: #3f3f3f;background-color: #3f3f3f}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a .responsive-menu-subarrow{right: 0;height: 44px;line-height: px;width: 44px;color: #ffffff;border-left: 1px solid #3c3c3c;background-color: #43494c}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active{color: #ffffff;border-color: #212121;background-color: #212121}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active:hover{color: #ffffff;border-color: #3f3f3f;background-color: #3f3f3f}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-item a .responsive-menu-subarrow:hover{color: #ffffff;border-color: #3c3c3c;background-color: #3c3c3c}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-current-item > .responsive-menu-item-link{background-color: #43494c;color: #ffffff;border-color: #212121}#responsive-menu-container #responsive-menu ul.responsive-menu-submenu li.responsive-menu-current-item > .responsive-menu-item-link:hover{background-color: #43494c;color: #ffffff;border-color: #3f3f3f}}</style>
+
+
+
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"url": "http://www.infowars.com",
+		"logo": "http://hw.infowars.com/wp-content/images/logo.jpg"
+	}
+</script>
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Alex Jones' Infowars",
+		"url": "http://www.infowars.com",
+		"sameAs": [
+			"https://www.facebook.com/AlexanderEmerickJones",
+			"https://twitter.com/realalexjones",
+			"https://plus.google.com/+infowars",
+			"https://www.youtube.com/user/TheAlexJonesChannel"
+		]
+	}
+</script>
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"url": "http://www.infowars.com",
+		"contactPoints": [
+			{ "@type": "ContactPoint", "telephone": "+1-888-253-3139" , "contactType": "customer support" },
+			{ "@type": "ContactPoint", "telephone": "+1-888-253-3139" , "contactType": "technical support" }
+		]
+	}
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6888464-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.2/jquery.colorbox.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+
+  _qevents.push({
+    qacct:"p-mcrPr0aT_TQ1D"
+  });
+</script>
+<style type="text/css">
+article p b {
+  font-weight: bold;
+}
+article p i {
+  font-style: italic;
+}
+.play-button-ao {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background: url('https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/play.png') no-repeat center center;
+}
+.play-button-ao.AudioPlay {
+	background: url('https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/play.png') no-repeat center center;
+}
+.play-button-ao.AudioPause {
+	background: url('https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/pause.png') no-repeat center center;
+}
+.p-only-small {
+	display: none;
+}
+@media (max-width: 766px) {
+	.p-only-small {
+		display: inline-block;
+	}
+}
+</style>
+<script type="text/javascript">
+	jQuery(document).ready(function () {
+		var stream_url = 'https://streams.infowars.com/alexjonesshow-aac?type=http&nocache=1792';
+		var stream = null;
+		jQuery('.play-button-ao').click(function (event) {
+			if (stream == null) {
+				stream = new Audio(stream_url); // floating element
+			}
+			if (!stream.paused) {
+				stream.pause(); // promise
+				jQuery(this).addClass('AudioPlay');
+                jQuery(this).removeClass('AudioPause');
+			}
+			else {
+				stream.play(); // promise
+				jQuery(this).addClass('AudioPause');
+                jQuery(this).removeClass('AudioPlay');
+			}
+		});
+	});
+</script>
+<noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-mcrPr0aT_TQ1D.gif" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1973508039540273');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1973508039540273&ev=PageView&noscript=1"
+/></noscript>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml      : true,
+      version    : 'v3.0'
+    });
+  }; 
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://www.infowars.com/wp-content/themes/infowars-sitegoals/css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.6/slick.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.6/slick-theme.css" type="text/css">
+<script src="//use.typekit.net/smg7rbp.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body class="home blog group-blog responsive-menu-slide-left">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<header class="header-wrap">
+<div id="page" class="hfeed site ">
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<div class="container" id="header-container">
+<div id="header">
+<div id="grad-left" class="gradient"></div>
+<div id="grad-right" class="gradient"></div>
+<div id="grad-bottom"></div>
+<div id="masthead-top">
+<div id="masthead-logo">
+<a href="/">
+<img id="main-logo" src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/logo.png" alt="Alex Jones' InfoWars" title="Alex Jones' InfoWars" />
+<img id="mobile-logo" src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/mlogo.png" alt="Alex Jones' InfoWars" title="Alex Jones' InfoWars" />
+</a>
+</div>
+</div>
+<div id="masthead-show">
+<div class="player-wrapper">
+<div id="player-info">
+<div class="headline">The</div>
+<div class="title"><span class="mobile-headline">The </span>Alex Jones <span class="alt">Radio Show</span></div>
+<div class="player">
+<div class="AudioPlay play play-button-ao"></div><div style="display: inline-block;margin-right: 10px;">Listen now</div><div style="display: inline-block;"><a target="_blank" href="https://static.infowars.com/watch-alex-jones-show-akamai.html" class="p-only-small" style="color: #fff;">Watch Now</a></div>
+</div>
+</div>
+<div id="akamai-audio-player" style="display:none!important;"></div>
+<img class="icon" src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/alex.png">
+</div>
+<div id="social-media-share">
+<a target="_blank" href="https://www.facebook.com/AlexanderEmerickJones"><img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/icons/facebook.jpg"></a>
+<a target="_blank" href="https://www.youtube.com/user/TheAlexJonesChannel"><img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/icons/youtube.jpg"></a>
+<a target="_blank" href="https://twitter.com/#!/realalexjones"><img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/icons/twitter.jpg"></a>
+<a target="_blank" href="https://www.pinterest.com/infowarspins"><img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/icons/pinterest.jpg"></a>
+<a target="_blank" href="https://infowars.com/feed/custom_feed_rss"><img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/icons/rss.jpg"></a>
+<a target="_blank" href="https://www.infowarsstore.com/"><img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/icons/cart.jpg"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="container" id="masthead-navigation">
+<div id="navigation">
+<div class="inner-wrapper">
+<div class="menu-navigation-header-container"><ul id="menu-navigation-header" class="menu"><li id="menu-item-217431" class="first-nav menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-217431"><a href="/"><i class="fa fa-icon"></i></a></li>
+<li id="menu-item-216918" class="alex-jones-radio-show-link menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-216918"><a title="Alex Jones Radio Show" href="/watch-alex-jones-show">Radio Show</a>
+<ul class="sub-menu">
+<li id="menu-item-216949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216949"><a href="https://www.infowars.com/watch-alex-jones-show/">Watch</a></li>
+<li id="menu-item-216919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216919"><a href="https://www.infowars.com/about-alex-jones/">About Alex Jones</a></li>
+<li id="menu-item-216934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216934"><a href="https://www.infowars.com/listen-to-the-radio-show-archive/">Radio Show Archive</a></li>
+</ul>
+</li>
+<li id="menu-item-216953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-216953"><a href="https://www.infowars.com/news/">News</a>
+<ul class="sub-menu">
+<li id="menu-item-216938" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216938"><a href="https://www.infowars.com/category/special-reports/">Special Reports</a></li>
+<li id="menu-item-216922" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216922"><a href="https://www.infowars.com/category/us-news/">U.S. News</a></li>
+<li id="menu-item-216929" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216929"><a href="https://www.infowars.com/category/world-news/">World News</a></li>
+<li id="menu-item-216921" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216921"><a href="https://www.infowars.com/category/economy/">Economy</a></li>
+<li id="menu-item-291901" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-291901"><a href="https://www.infowars.com/category/government/">Government</a></li>
+<li id="menu-item-216928" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216928"><a href="https://www.infowars.com/category/world-at-war/">World at War</a></li>
+<li id="menu-item-217396" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-217396"><a href="https://www.infowars.com/category/health/">Health</a></li>
+<li id="menu-item-216926" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216926"><a href="https://www.infowars.com/category/science-technology/">Science &#038; Technology</a></li>
+<li id="menu-item-291902" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-291902"><a href="https://www.infowars.com/category/globalism/">Globalism</a></li>
+<li id="menu-item-216924" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216924"><a href="https://www.infowars.com/category/hot-news/">Hot News</a></li>
+</ul>
+</li>
+<li id="menu-item-216930" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-216930"><a title="Multimedia" href="/videos/">Videos</a>
+<ul class="sub-menu">
+<li id="menu-item-222579" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-222579"><a href="/videos/">All Videos</a></li>
+<li id="menu-item-216952" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216952"><a href="https://www.infowars.com/nightly-news/">Nightly News</a></li>
+<li id="menu-item-216931" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216931"><a target="_blank" href="http://prisonplanet.tv">PrisonPlanet.tv</a></li>
+</ul>
+</li>
+<li id="menu-item-216932" class="bold menu-item menu-item-type-custom menu-item-object-custom menu-item-216932"><a target="_blank" href="https://www.infowarsstore.com?ims=gtpqq&#038;utm_campaign=Top+Of+Page&#038;utm_source=Infowars.com&#038;utm_medium=Magento&#038;utm_content=Top+Of+Page">Store</a></li>
+<li id="menu-item-216933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216933"><a href="/category/featured-stories/">Top Stories</a></li>
+<li id="menu-item-216956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216956"><a href="https://www.infowars.com/breaking-news/">Breaking News</a></li>
+<li id="menu-item-216957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-216957"><a href="https://www.infowars.com/contact/">Contact</a>
+<ul class="sub-menu">
+<li id="menu-item-467689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-467689"><a href="https://www.infowars.com/media-inquiries/">Media Inquiries</a></li>
+<li id="menu-item-257826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257826"><a href="https://www.infowars.com/affiliates/">Affiliates</a></li>
+<li id="menu-item-266306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-266306"><a href="https://www.infowars.com/contributors/">Contributors</a></li>
+<li id="menu-item-397438" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-397438"><a href="https://www.infowars.com/2017-guide-to-infowars-social-media-v1/">Social Media</a></li>
+</ul>
+</li>
+</ul></div> <div class="subscribe subscribe__container">
+<div class="subscribe__wrap">
+<div class="subscribe__button"><a href="/newsletter-sign-up">Subscribe</a></div>
+</div>
+</div>
+
+</div>
+</div>
+<div id="mobile-navigation">
+<div class="inner-wrapper">
+<div class="menu-mobile-navigation-header-container"><ul id="menu-mobile-navigation-header" class="menu"><li id="menu-item-312751" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-312751"><a href="/watch-alex-jones-show">Watch Live</a></li>
+<li id="menu-item-312752" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-312752"><a href="/breaking-news">Breaking</a></li>
+<li id="menu-item-312756" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-312756"><a target="_blank" href="http://www.infowarsstore.com">Store</a></li>
+</ul></div> </div>
+</div>
+</div>
+</header>
+<div id="content" class="site-content">
+<style>
+	@media screen and (max-width: 440px) {
+		.mobile-hide-special {
+			display: none;
+		}
+	}
+</style>
+<div id="primary" class="content-area pure-g home-page">
+<main id="main" class="content pure-u-1 pure-u-sm-1 pure-u-lg-3-4 pure-u-xl-3-4" role="main">
+<section class="slider">
+<div id="home-flexslider" class="flexslider">
+<ul class="slides">
+<li>
+<a href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2016/07/eu-european-union-brexit.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2016/07/eu-european-union-brexit.jpg 800w, https://www.infowars.com/wp-content/uploads/2016/07/eu-european-union-brexit-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2016/07/eu-european-union-brexit-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/" rel="bookmark" title="Permanent Link to Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It">
+<div class="title-ddd">Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It</div>
+</a>
+</h3>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/#disqus_thread" rel="bookmark" title="Permanent Link to Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/130718protest.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/130718protest.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/130718protest-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/130718protest-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/" rel="bookmark" title="Permanent Link to London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints">
+<div class="title-ddd">London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/world-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>World News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/#disqus_thread" rel="bookmark" title="Permanent Link to London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/Trump-2.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/Trump-2.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/Trump-2-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/Trump-2-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/" rel="bookmark" title="Permanent Link to Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’">
+<div class="title-ddd">Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/world-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>World News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/#disqus_thread" rel="bookmark" title="Permanent Link to Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/06/ICE.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/06/ICE.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/06/ICE-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/06/ICE-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/" rel="bookmark" title="Permanent Link to Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms">
+<div class="title-ddd">Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/us-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>U.S. News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/#disqus_thread" rel="bookmark" title="Permanent Link to Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/" rel="bookmark" title="Permanent Link to CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President">
+<div class="title-ddd">CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/us-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>U.S. News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/#disqus_thread" rel="bookmark" title="Permanent Link to CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/majority-of-russians-believe-shadowy-global-government-exists/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2016/04/040316globalelite.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2016/04/040316globalelite.jpg 800w, https://www.infowars.com/wp-content/uploads/2016/04/040316globalelite-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2016/04/040316globalelite-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/majority-of-russians-believe-shadowy-global-government-exists/" rel="bookmark" title="Permanent Link to Majority Of Russians Believe Shadowy Global Government Exists">
+<div class="title-ddd">Majority Of Russians Believe Shadowy Global Government Exists</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/world-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>World News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/majority-of-russians-believe-shadowy-global-government-exists/#disqus_thread" rel="bookmark" title="Permanent Link to Majority Of Russians Believe Shadowy Global Government Exists">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/president-trump-tells-u-k-media-a-failed-economic-brexit-likely-means-no-u-s-trade-deal-possible/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/TrumpMay.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/TrumpMay.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/TrumpMay-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/TrumpMay-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/president-trump-tells-u-k-media-a-failed-economic-brexit-likely-means-no-u-s-trade-deal-possible/" rel="bookmark" title="Permanent Link to President Trump Tells U.K. Media a Failed Economic Brexit Likely Means No U.S. Trade Deal Possible">
+<div class="title-ddd">President Trump Tells U.K. Media a Failed Economic Brexit Likely Means No U.S. Trade Deal Possible</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/world-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>World News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/president-trump-tells-u-k-media-a-failed-economic-brexit-likely-means-no-u-s-trade-deal-possible/#disqus_thread" rel="bookmark" title="Permanent Link to President Trump Tells U.K. Media a Failed Economic Brexit Likely Means No U.S. Trade Deal Possible">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/5-of-the-most-controversial-moments-from-peter-strzoks-chaotic-testimony-to-congress/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/Peter-Strzok-Hearing-YouTube-Screenshot.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/Peter-Strzok-Hearing-YouTube-Screenshot.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/Peter-Strzok-Hearing-YouTube-Screenshot-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/Peter-Strzok-Hearing-YouTube-Screenshot-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/5-of-the-most-controversial-moments-from-peter-strzoks-chaotic-testimony-to-congress/" rel="bookmark" title="Permanent Link to 5 Of The Most Controversial Moments From Peter Strzok’s Chaotic Testimony To Congress">
+<div class="title-ddd">5 Of The Most Controversial Moments From Peter Strzok’s Chaotic Testimony To Congress</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/us-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>U.S. News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/5-of-the-most-controversial-moments-from-peter-strzoks-chaotic-testimony-to-congress/#disqus_thread" rel="bookmark" title="Permanent Link to 5 Of The Most Controversial Moments From Peter Strzok’s Chaotic Testimony To Congress">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/video-abolish-ice-protesters-call-black-ice-agents-n-word/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/120718ice.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/120718ice.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/120718ice-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/120718ice-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/video-abolish-ice-protesters-call-black-ice-agents-n-word/" rel="bookmark" title="Permanent Link to Video: &#8216;Abolish ICE&#8217; Protesters Call Black ICE Agents N-Word">
+<div class="title-ddd">Video: &#8216;Abolish ICE&#8217; Protesters Call Black ICE Agents N-Word</div>
+</a>
+</h3>
+<a href="https://www.infowars.com/category/us-news/"><span class="white-cat large"><i class="fa fa-bookmark"></i>U.S. News</span></a>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/video-abolish-ice-protesters-call-black-ice-agents-n-word/#disqus_thread" rel="bookmark" title="Permanent Link to Video: &#8216;Abolish ICE&#8217; Protesters Call Black ICE Agents N-Word">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+<li>
+<a href="https://www.infowars.com/build-a-bear-crowd-chaos-proves-trump-right-on-border-security/">
+<img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/071218buildabear-1.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/071218buildabear-1.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/071218buildabear-1-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/071218buildabear-1-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /> </a>
+<div class="flex-caption">
+<div class="flex-caption-wrapper">
+<h3>
+<a href="https://www.infowars.com/build-a-bear-crowd-chaos-proves-trump-right-on-border-security/" rel="bookmark" title="Permanent Link to Build-A-Bear Crowd CHAOS Proves Trump Right on Border Security">
+<div class="title-ddd">Build-A-Bear Crowd CHAOS Proves Trump Right on Border Security</div>
+</a>
+</h3>
+<span class="gallery-comments comment-count">
+<a class="disqus-comment-count" href="https://www.infowars.com/build-a-bear-crowd-chaos-proves-trump-right-on-border-security/#disqus_thread" rel="bookmark" title="Permanent Link to Build-A-Bear Crowd CHAOS Proves Trump Right on Border Security">
+</a>
+</span>
+</div>
+</div>
+<div class="overlay"></div>
+</li>
+</ul>
+</div>
+</section>
+<section class="gallery tablet-hidden desktop-hidden">
+<div class="pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-lg-2-3 pure-u-xl-2-3">
+<article id="post-530823" class="large post-530823 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-stories category-tile">
+<div class="gallery-img-wrapper">
+<a href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/"><img class="landscape thumbnail large" width="610" height="320" alt="Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It" itemprop="image" src="https://www.infowars.com/wp-content/uploads/2016/07/eu-european-union-brexit-610x320.jpg" /></a> </div>
+<div class="overlay">
+<a href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/" rel="bookmark" title="Permanent Link to Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It">
+<h3>Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed ...</h3> </a>
+<span class="gallery-comments comment-count"><a class="disqus-comment-count" href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/#disqus_thread" rel="bookmark" title="Permanent Link to Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It"></a></span>
+</div>
+</article>
+</div>
+<div class="pure-u-1 pure-u-sm-1 pure-u-lg-1-3 pure-u-xl-1-3">
+<article id="post-530818" class="small post-530818 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-stories category-tile category-world-news">
+<div class="gallery-img-wrapper">
+<a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/"><img class="landscape thumbnail large" width="610" height="320" alt="London Anti-Trump Protest Ridiculed as &#039;Baby Blimp&#039; Disappoints" itemprop="image" src="https://www.infowars.com/wp-content/uploads/2018/07/130718protest-610x320.jpg" /></a> </div>
+<div class="overlay">
+<a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/" rel="bookmark" title="Permanent Link to London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints">
+<h3>London Anti-Trump Protest Ridiculed as &#8216;Baby Blim...</h3> </a>
+<a href="https://www.infowars.com/category/world-news/"><span class="white-cat"><i class="fa fa-bookmark"></i>World News</span></a>
+<span class="gallery-comments comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/#disqus_thread" rel="bookmark" title="Permanent Link to London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints"></a></span>
+</div>
+</article>
+<article id="post-530808" class="small post-530808 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-stories category-tile category-world-news">
+<div class="gallery-img-wrapper">
+<a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/"><img class="landscape thumbnail large" width="610" height="320" alt="Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’" itemprop="image" src="https://www.infowars.com/wp-content/uploads/2018/07/Trump-2-610x320.jpg" /></a> </div>
+<div class="overlay">
+<a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/" rel="bookmark" title="Permanent Link to Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’">
+<h3>Trump Says Migration Has Changed Europe’s ‘Fabric,�...</h3> </a>
+<a href="https://www.infowars.com/category/world-news/"><span class="white-cat"><i class="fa fa-bookmark"></i>World News</span></a>
+<span class="gallery-comments comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/#disqus_thread" rel="bookmark" title="Permanent Link to Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’"></a></span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<div id="home-tabs">
+<ul>
+<li><a href="#tabs-1">Featured<span class="mobile-hide-special"> Stories</span></a></li>
+<li><a href="#tabs-2">All News</a></li>
+</ul>
+<br style="clear:both;" />
+<div id="tabs-1">
+<section class="featured-stories home-section">
+<div class="articles-wrap pure-g">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/creepy-the-disturbing-faces-of-peter-strzok/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/peter-strzok23.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/peter-strzok23.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/peter-strzok23-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/peter-strzok23-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/creepy-the-disturbing-faces-of-peter-strzok/">&#8216;The Evil Face of the Deep State&#8217;: The Disturbing Faces of Peter Strzok</a></h3>
+<h4 class="entry-subtitle">'Would you trust Peter Strzok around your children?'</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/creepy-the-disturbing-faces-of-peter-strzok/#disqus_thread" rel="bookmark" title="Permanent Link to &#8216;The Evil Face of the Deep State&#8217;: The Disturbing Faces of Peter Strzok"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/video-uk-trump-protesters-are-complete-idiots/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/120718uktrump.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/120718uktrump.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/120718uktrump-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/120718uktrump-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/video-uk-trump-protesters-are-complete-idiots/">Video: UK Trump Protesters Are Complete Idiots</a></h3>
+ <h4 class="entry-subtitle">The cringe here is strong</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/video/">
+Video </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/video-uk-trump-protesters-are-complete-idiots/#disqus_thread" rel="bookmark" title="Permanent Link to Video: UK Trump Protesters Are Complete Idiots"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/watch-hillary-media-and-govt-officials-call-for-the-end-of-infowars/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/9-12-18-clinton.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/9-12-18-clinton.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/9-12-18-clinton-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/9-12-18-clinton-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/watch-hillary-media-and-govt-officials-call-for-the-end-of-infowars/">Watch Hillary, Media and Gov&#8217;t Officials Call For The End Of Infowars</a></h3>
+<h4 class="entry-subtitle">The establishment is threatened by alternative media</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/watch-hillary-media-and-govt-officials-call-for-the-end-of-infowars/#disqus_thread" rel="bookmark" title="Permanent Link to Watch Hillary, Media and Gov&#8217;t Officials Call For The End Of Infowars"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/watch-clinton-hatchet-man-peter-strzok-grilled-by-congress/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-strzok.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-strzok.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-strzok-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-strzok-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/watch-clinton-hatchet-man-peter-strzok-grilled-by-congress/">CHAOS: Strzok Represents A Biased FBI</a></h3>
+<h4 class="entry-subtitle">Deep State swamp creature finally testifies in public</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span> 
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/watch-clinton-hatchet-man-peter-strzok-grilled-by-congress/#disqus_thread" rel="bookmark" title="Permanent Link to CHAOS: Strzok Represents A Biased FBI"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/starbucks-plastic-straw-ban-backfires-new-lids-use-more-plastic/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-coffee.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-coffee.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-coffee-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-coffee-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/starbucks-plastic-straw-ban-backfires-new-lids-use-more-plastic/">Starbucks Plastic Straw Ban Backfires, New Lids Use More Plastic</a></h3>
+<h4 class="entry-subtitle">Corporation fails attempt to help the environment</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/science-technology/">
+Science &amp; Tech </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/starbucks-plastic-straw-ban-backfires-new-lids-use-more-plastic/#disqus_thread" rel="bookmark" title="Permanent Link to Starbucks Plastic Straw Ban Backfires, New Lids Use More Plastic"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/i-dont-give-a-damn-what-you-appreciate-gowdy-blasts-peter-strzok/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/strzok-gowdy.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/strzok-gowdy.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/strzok-gowdy-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/strzok-gowdy-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/i-dont-give-a-damn-what-you-appreciate-gowdy-blasts-peter-strzok/">‘I Don’t Give a Damn What You Appreciate’: Gowdy Blasts Peter Strzok</a></h3>
+<h4 class="entry-subtitle">Agent denies anti-Trump text messages during 2016 election prove bias</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/i-dont-give-a-damn-what-you-appreciate-gowdy-blasts-peter-strzok/#disqus_thread" rel="bookmark" title="Permanent Link to ‘I Don’t Give a Damn What You Appreciate’: Gowdy Blasts Peter Strzok"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/ammon-bundy-takes-callers-tells-how-doj-denies-justice/">Ammon Bundy Takes Callers &#038; Tells How DOJ Denies Justice</a></h3>
+<h4 class="entry-subtitle">A lesson in government corruption</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/ammon-bundy-takes-callers-tells-how-doj-denies-justice/#disqus_thread" rel="bookmark" title="Permanent Link to Ammon Bundy Takes Callers &#038; Tells How DOJ Denies Justice"></a></span>
+</div>
+</article>
+</div>
+
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/dems-bank-on-challengers-charisma-to-defeat-ted-cruz/">Dems Bank on Challenger’s “Charisma” to Defeat Ted Cruz</a></h3>
+<h4 class="entry-subtitle">Desperate Beto talking point exposed</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/dems-bank-on-challengers-charisma-to-defeat-ted-cruz/#disqus_thread" rel="bookmark" title="Permanent Link to Dems Bank on Challenger’s “Charisma” to Defeat Ted Cruz"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/trump-releases-letter-from-kim-jong-un/">Trump Releases Letter from Kim Jong Un</a></h3>
+<h4 class="entry-subtitle">North Korean leader calls summit the 'start of a meaningful journey'</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/trump-releases-letter-from-kim-jong-un/#disqus_thread" rel="bookmark" title="Permanent Link to Trump Releases Letter from Kim Jong Un"></a></span>
+</div>
+</article>
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/spain-must-accept-more-migrants-spanish-court-rules/">Spain Must Accept More Migrants, Spanish Court Rules</a></h3>
+<h4 class="entry-subtitle">Migrant arrivals skyrocketing in Spain</h4> 
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/europewars-redirect/">
+Europewars Redirect </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/spain-must-accept-more-migrants-spanish-court-rules/#disqus_thread" rel="bookmark" title="Permanent Link to Spain Must Accept More Migrants, Spanish Court Rules"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/exclusive-new-eyewitness-in-seth-rich-murder-investigation/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2015/12/chalk-police-outline.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2015/12/chalk-police-outline.jpg 800w, https://www.infowars.com/wp-content/uploads/2015/12/chalk-police-outline-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/exclusive-new-eyewitness-in-seth-rich-murder-investigation/">EXCLUSIVE: New Eyewitness In Seth Rich Murder Investigation</a></h3>
+<h4 class="entry-subtitle">Investigator offers $20,000 for surveillance footage of the incident</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/exclusive-new-eyewitness-in-seth-rich-murder-investigation/#disqus_thread" rel="bookmark" title="Permanent Link to EXCLUSIVE: New Eyewitness In Seth Rich Murder Investigation"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/whos-the-worst-politician-in-congress-infowars-midtermmadness-round-2/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/03/32118Congress.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/03/32118Congress.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/03/32118Congress-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/03/32118Congress-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/whos-the-worst-politician-in-congress-infowars-midtermmadness-round-2/">Who&#8217;s The Worst Politician In Congress? Infowars #MidtermMadness Round 2</a></h3>
+<h4 class="entry-subtitle">Vote in the ongoing poll now!</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/whos-the-worst-politician-in-congress-infowars-midtermmadness-round-2/#disqus_thread" rel="bookmark" title="Permanent Link to Who&#8217;s The Worst Politician In Congress? Infowars #MidtermMadness Round 2"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/unmask-antifa-bill-promises-jail-time-for-violent-left-wing-terrorists/">&#8216;Unmask Antifa&#8217; Bill Promises Jail Time For Violent Left-Wing Terrorists</a></h3>
+<h4 class="entry-subtitle">Politicians come up with a solution to the terrorist group's attacks</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/unmask-antifa-bill-promises-jail-time-for-violent-left-wing-terrorists/#disqus_thread" rel="bookmark" title="Permanent Link to &#8216;Unmask Antifa&#8217; Bill Promises Jail Time For Violent Left-Wing Terrorists"></a></span>
+</div>
+</article>
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/stormy-arrested-in-liberal-city-lawyer-claims-its-politically-motivated/">Stormy Arrested in Liberal City, Lawyer Claims It&#8217;s &#8220;Politically-Motivated&#8221;</a></h3>
+<h4 class="entry-subtitle">Last Columbus election pitted Democrats against Democrats</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/stormy-arrested-in-liberal-city-lawyer-claims-its-politically-motivated/#disqus_thread" rel="bookmark" title="Permanent Link to Stormy Arrested in Liberal City, Lawyer Claims It&#8217;s &#8220;Politically-Motivated&#8221;"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/europe-wants-us-to-protect-them-from-russia-while-they-buy-russian-oil/">Europe Wants Us To Protect Them From Russia&#8230; While They Buy Russian Oil</a></h3>
+<h4 class="entry-subtitle">Trump calls out hypocrisy of global elite</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/europe-wants-us-to-protect-them-from-russia-while-they-buy-russian-oil/#disqus_thread" rel="bookmark" title="Permanent Link to Europe Wants Us To Protect Them From Russia&#8230; While They Buy Russian Oil"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/watch-live-michigan-declares-marijuana-successfully-treats-eleven-debilitating-medical-conditions/">Breaking: Sacha Baron Cohen Targets Infowars as CNN Officially Calls For Infowars to be Banned</a></h3>
+<h4 class="entry-subtitle">Establishment continues attacking free speech</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/watch-live-michigan-declares-marijuana-successfully-treats-eleven-debilitating-medical-conditions/#disqus_thread" rel="bookmark" title="Permanent Link to Breaking: Sacha Baron Cohen Targets Infowars as CNN Officially Calls For Infowars to be Banned"></a></span>
+</div>
+</article>
+</div>
+<div class="three-columns">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/cnn-lobbies-facebook-to-shut-down-infowars/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/120718cnn.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/120718cnn.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/120718cnn-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/120718cnn-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/cnn-lobbies-facebook-to-shut-down-infowars/">CNN Lobbies Facebook to Shut Down Infowars</a></h3>
+<h4 class="entry-subtitle">Social media giant admits it down ranks Infowars content</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/cnn-lobbies-facebook-to-shut-down-infowars/#disqus_thread" rel="bookmark" title="Permanent Link to CNN Lobbies Facebook to Shut Down Infowars"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/msnbc-host-asks-if-originlist-view-of-us-constitution-is-still-appropriate/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/Tur.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/Tur.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/Tur-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/Tur-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/msnbc-host-asks-if-originlist-view-of-us-constitution-is-still-appropriate/">MSNBC Host Questions If &#8216;Originalist View&#8217; Of US Constitution Is Still &#8216;Appropriate&#8217;</a></h3>
+<h4 class="entry-subtitle">"It's 2018 and not 1776."</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/msnbc-host-asks-if-originlist-view-of-us-constitution-is-still-appropriate/#disqus_thread" rel="bookmark" title="Permanent Link to MSNBC Host Questions If &#8216;Originalist View&#8217; Of US Constitution Is Still &#8216;Appropriate&#8217;"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/anti-trump-protest-at-nato-draws-only-a-couple-dozen/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/protest.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/protest.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/protest-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/protest-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/anti-trump-protest-at-nato-draws-only-a-couple-dozen/">Anti-Trump Protest at NATO Draws Only a Couple Dozen</a></h3>
+<h4 class="entry-subtitle">"Make Peace Great Again" organizers were expecting a few thousand protestors for President Trump's visit, but only a couple dozen showed up.</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/anti-trump-protest-at-nato-draws-only-a-couple-dozen/#disqus_thread" rel="bookmark" title="Permanent Link to Anti-Trump Protest at NATO Draws Only a Couple Dozen"></a></span>
+</div>
+</article>
+</div>
+</div>
+<div class="from-our-store">
+<h1 class="category-title">From Our Store</h1><a href="https://www.infowarsstore.com/" title="Visit Store" class="view-all">Visit Store&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+<hr class="blue-divider">
+<div class="pure-g dynamic-store start">
+<div class="pure-u-1 pure-u-sm pure-u-lg-1-3 pure-u-xl-1-3 store-price">
+<a class="product-title" href=""><h2></h2></a>
+<span class="grey">Your Price: <span class="your-price"></span></span>
+<span class="red">On Sale: <span class="sale-price"></span></span>
+</div>
+<div class="pure-u-1 pure-u-sm-1 pure-u-lg-1-3 pure-u-xl-1-3 archive-store-description">
+<p class="product-description">
+</p>
+</div>
+<div class="pure-u-1 pure-u-sm-1 pure-u-lg-1-3 pure-u-xl-1-3 store-image-buttons">
+<img class="product img-responsive" src="">
+<a class="buy-now-button button product-link" href="https://www.infowarsstore.com/survival-shield-x-2-nascent-iodine.html">Buy Now</a>
+<a class="learn-more-button button product-info" href="https://www.infowarsstore.com/survival-shield-x-2-nascent-iodine.html">Learn More</a>
+</div>
+</div>
+</div>
+<br class="clear" />
+
+<div class="three-columns border-top">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/trump-claims-tremendous-progress-says-nato-allies-agreed-to-increase-spending-after-emergency-meeting/">Trump Claims &#8220;Tremendous&#8221; Progress, Says NATO Allies Agreed To Increase Spending After Emergency Meeting</a></h3>
+<h4 class="entry-subtitle">"NATO is much stronger now than it was two days ago," Trump said</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/trump-claims-tremendous-progress-says-nato-allies-agreed-to-increase-spending-after-emergency-meeting/#disqus_thread" rel="bookmark" title="Permanent Link to Trump Claims &#8220;Tremendous&#8221; Progress, Says NATO Allies Agreed To Increase Spending After Emergency Meeting"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/msnbc-joins-cnn-in-ratings-behind-nickelodeon-and-hgtv/">MSNBC Joins CNN In Ratings Behind Nickelodeon And HGTV</a></h3>
+<h4 class="entry-subtitle">Fox News pulled out another week in first place in the cable ratings, while MSNBC and CNN failed to even beat home improvement shows and children’s cartoons</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/msnbc-joins-cnn-in-ratings-behind-nickelodeon-and-hgtv/#disqus_thread" rel="bookmark" title="Permanent Link to MSNBC Joins CNN In Ratings Behind Nickelodeon And HGTV"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/stormy-daniels-arrested-for-allegedly-allowing-strip-club-patron-to-touch-her/">Stormy Daniels arrested for allegedly allowing strip club patron to touch her</a></h3>
+<h4 class="entry-subtitle">After her “Make America Horny Again” show, undercover officers approached Daniels and said she would be arrested for allowing the patron to touch her</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/hot-news/">
+Hot News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/stormy-daniels-arrested-for-allegedly-allowing-strip-club-patron-to-touch-her/#disqus_thread" rel="bookmark" title="Permanent Link to Stormy Daniels arrested for allegedly allowing strip club patron to touch her"></a></span>
+</div>
+ </article>
+</div>
+</div>
+</div>
+</section>
+<div class="featured-content">
+</div>
+<div class="load-more-featured">
+<a href="" class="load-more featured">Load More Stories</a>
+</div>
+</div>
+<div id="tabs-2">
+<section class="special-reports home-section">
+<div class="heading-wrap">
+<h1>Special Reports</h1><a href="/category/special-reports/" title="View Archive" class="view-all">view all&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+</div>
+<hr class="blue-divider">
+<div class="articles-wrap pure-g">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/video-see-woman-attacked-by-antifa-issue-a-dire-warning/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-nazis.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-nazis.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-nazis-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-nazis-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/video-see-woman-attacked-by-antifa-issue-a-dire-warning/">VIDEO: See Woman Attacked By ANTIFA Issue A Dire Warning</a></h3>
+<h4 class="entry-subtitle">Violent attacks by the left becoming more frequent</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/special-reports/">
+Special Reports </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/video-see-woman-attacked-by-antifa-issue-a-dire-warning/#disqus_thread" rel="bookmark" title="Permanent Link to VIDEO: See Woman Attacked By ANTIFA Issue A Dire Warning"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/communist-china-officially-begins-censorship-on-american-iphone-devices/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-china.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-china.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-china-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/7-12-18-china-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/communist-china-officially-begins-censorship-on-american-iphone-devices/">Communist China Officially Begins Censorship On American iPhone Devices</a></h3>
+<h4 class="entry-subtitle">Apple now abiding by Chinese rules</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/special-reports/">
+Special Reports </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/communist-china-officially-begins-censorship-on-american-iphone-devices/#disqus_thread" rel="bookmark" title="Permanent Link to Communist China Officially Begins Censorship On American iPhone Devices"></a></span>
+</div>
+</article>
+</div>
+<div class="three-columns">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/breaking-20000-reward-for-surveillance-tape-of-seth-richs-murder/">BREAKING! $20,000 Reward For Surveillance Tape Of Seth Rich’s Murder</a></h3>
+<h4 class="entry-subtitle">Investigators say they're getting close to solving the mysterious case</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/special-reports/">
+Special Reports </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/breaking-20000-reward-for-surveillance-tape-of-seth-richs-murder/#disqus_thread" rel="bookmark" title="Permanent Link to BREAKING! $20,000 Reward For Surveillance Tape Of Seth Rich’s Murder"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/special-counsel-robert-mueller-out-of-control/">Special Counsel Robert Mueller Out Of Control</a></h3>
+<h4 class="entry-subtitle">When will the witch-hunt end?</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/special-reports/">
+Special Reports </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/special-counsel-robert-mueller-out-of-control/#disqus_thread" rel="bookmark" title="Permanent Link to Special Counsel Robert Mueller Out Of Control"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/schumers-strategy-to-oppose-scotus-nomination/">Schumer’s Strategy to Oppose SCOTUS Nomination</a></h3>
+<h4 class="entry-subtitle">Senate Minority Leader lets Democrat tactics out of the bag</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/special-reports/">
+Special Reports </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/schumers-strategy-to-oppose-scotus-nomination/#disqus_thread" rel="bookmark" title="Permanent Link to Schumer’s Strategy to Oppose SCOTUS Nomination"></a></span>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="us-news home-section">
+<div class="heading-wrap">
+<h1>U.S. News</h1><a href="/category/us-news/" title="View Archive" class="view-all">view all&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+</div>
+<hr class="blue-divider">
+<div class="articles-wrap pure-g">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+ <a href="https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/06/ICE.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/06/ICE.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/06/ICE-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/06/ICE-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/">Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms</a></h3>
+<h4 class="entry-subtitle">House Democrats have crafted legislation that would abolish the Immigration and Customs Enforcement (ICE) agency.</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/#disqus_thread" rel="bookmark" title="Permanent Link to Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/06/6-26-18-waters-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/">CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President</a></h3>
+<h4 class="entry-subtitle">“Mad Max is the only one dancing to the beat of the ‘Resistance,’ and her album is about to go platinum.”</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/#disqus_thread" rel="bookmark" title="Permanent Link to CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President"></a></span>
+</div>
+</article>
+</div>
+<div class="three-columns">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/5-of-the-most-controversial-moments-from-peter-strzoks-chaotic-testimony-to-congress/">5 Of The Most Controversial Moments From Peter Strzok’s Chaotic Testimony To Congress</a></h3>
+<h4 class="entry-subtitle">The following are five of the most controversial moments from Peter Strzok’s ten hour testimony to Congress…</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/5-of-the-most-controversial-moments-from-peter-strzoks-chaotic-testimony-to-congress/#disqus_thread" rel="bookmark" title="Permanent Link to 5 Of The Most Controversial Moments From Peter Strzok’s Chaotic Testimony To Congress"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/video-abolish-ice-protesters-call-black-ice-agents-n-word/">Video: &#8216;Abolish ICE&#8217; Protesters Call Black ICE Agents N-Word</a></h3>
+<h4 class="entry-subtitle">"Diversity" mask slips as leftists yell racist slurs</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/video-abolish-ice-protesters-call-black-ice-agents-n-word/#disqus_thread" rel="bookmark" title="Permanent Link to Video: &#8216;Abolish ICE&#8217; Protesters Call Black ICE Agents N-Word"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/ammon-bundy-takes-callers-tells-how-doj-denies-justice/">Ammon Bundy Takes Callers &#038; Tells How DOJ Denies Justice</a></h3>
+<h4 class="entry-subtitle">A lesson in government corruption</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/us-news/">
+U.S. News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/ammon-bundy-takes-callers-tells-how-doj-denies-justice/#disqus_thread" rel="bookmark" title="Permanent Link to Ammon Bundy Takes Callers &#038; Tells How DOJ Denies Justice"></a></span>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="world-news home-section">
+<div class="heading-wrap">
+<h1>World News</h1><a href="/category/world-news/" title="View Archive" class="view-all">view all&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+</div>
+<hr class="blue-divider">
+<div class="articles-wrap pure-g">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/130718protest.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/130718protest.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/130718protest-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/130718protest-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/">London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints</a></h3>
+<h4 class="entry-subtitle">£30,000 for that?</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/#disqus_thread" rel="bookmark" title="Permanent Link to London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/"><img width="800" height="420" src="https://www.infowars.com/wp-content/uploads/2018/07/Trump-2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://www.infowars.com/wp-content/uploads/2018/07/Trump-2.jpg 800w, https://www.infowars.com/wp-content/uploads/2018/07/Trump-2-768x403.jpg 768w, https://www.infowars.com/wp-content/uploads/2018/07/Trump-2-610x320.jpg 610w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/">Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’</a></h3>
+<h4 class="entry-subtitle">“I think you are losing your culture.”</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/#disqus_thread" rel="bookmark" title="Permanent Link to Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’"></a></span>
+</div>
+</article>
+</div>
+<div class="three-columns">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/majority-of-russians-believe-shadowy-global-government-exists/">Majority Of Russians Believe Shadowy Global Government Exists</a></h3>
+<h4 class="entry-subtitle">67% of Russian citizens said they believe there is a secret world government.</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/majority-of-russians-believe-shadowy-global-government-exists/#disqus_thread" rel="bookmark" title="Permanent Link to Majority Of Russians Believe Shadowy Global Government Exists"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/president-trump-tells-u-k-media-a-failed-economic-brexit-likely-means-no-u-s-trade-deal-possible/">President Trump Tells U.K. Media a Failed Economic Brexit Likely Means No U.S. Trade Deal Possible</a></h3>
+<h4 class="entry-subtitle">The EU doesn’t allow member nations to conduct their own trade negotiations</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/president-trump-tells-u-k-media-a-failed-economic-brexit-likely-means-no-u-s-trade-deal-possible/#disqus_thread" rel="bookmark" title="Permanent Link to President Trump Tells U.K. Media a Failed Economic Brexit Likely Means No U.S. Trade Deal Possible"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/european-nations-are-ready-to-be-converted-to-islam/">European Nations Are Ready To Be Converted To Islam</a></h3>
+<h4 class="entry-subtitle">The continent is being rapidly transformed </h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/world-news/">
+World News </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/european-nations-are-ready-to-be-converted-to-islam/#disqus_thread" rel="bookmark" title="Permanent Link to European Nations Are Ready To Be Converted To Islam"></a></span>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="economic-crisis home-section">
+<div class="heading-wrap">
+<h1>Economy</h1><a href="/category/economy/" title="View Archive" class="view-all">view all&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+</div>
+<hr class="blue-divider">
+<div class="articles-wrap pure-g">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/world-running-out-of-gold/"><img width="380" height="218" src="https://www.infowars.com/wp-content/uploads/2016/04/042216goldbar-380x218.jpg" class="attachment-medium size-medium wp-post-image" alt="" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/world-running-out-of-gold/">World Running Out of Gold</a></h3>
+<h4 class="entry-subtitle">No substitute, experts warn</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/economy/">
+Economy </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/world-running-out-of-gold/#disqus_thread" rel="bookmark" title="Permanent Link to World Running Out of Gold"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 ">
+<article>
+<div class="thumbnail">
+<a href="https://www.infowars.com/top-tech-stocks-hit-record-highs/"><img width="380" height="218" src="https://www.infowars.com/wp-content/uploads/2015/12/120315wallstreet2-380x218.jpg" class="attachment-medium size-medium wp-post-image" alt="" /></a>
+</div>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/top-tech-stocks-hit-record-highs/">Top Tech Stocks Hit Record Highs</a></h3>
+<h4 class="entry-subtitle">Industrials rebound from yesterday's bad forecast</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/economy/">
+Economy </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/top-tech-stocks-hit-record-highs/#disqus_thread" rel="bookmark" title="Permanent Link to Top Tech Stocks Hit Record Highs"></a></span>
+</div>
+</article>
+</div>
+<div class="three-columns">
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/military-spending-destroys-private-sector-jobs-report/">Military Spending Destroys Private Sector Jobs &#8211; Report</a></h3>
+<h4 class="entry-subtitle">Military serves as a jobs program for immigrants, citizens</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/economy/">
+Economy </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/military-spending-destroys-private-sector-jobs-report/#disqus_thread" rel="bookmark" title="Permanent Link to Military Spending Destroys Private Sector Jobs &#8211; Report"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/china-says-will-hit-back-after-u-s-proposes-fresh-tariffs-on-200-billion-in-goods/">China says will hit back after U.S. proposes fresh tariffs on $200 billion in goods</a></h3>
+<h4 class="entry-subtitle">'This is a fight between unilateralism and multilateralism, protectionism and free trade, might and rules'</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/economy/">
+Economy </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/china-says-will-hit-back-after-u-s-proposes-fresh-tariffs-on-200-billion-in-goods/#disqus_thread" rel="bookmark" title="Permanent Link to China says will hit back after U.S. proposes fresh tariffs on $200 billion in goods"></a></span>
+</div>
+</article>
+</div>
+<div class="article pure-u-xs-1-1 pure-u-sm-1-3 pure-u-lg-1-3 pure-u-xl-1-3 ">
+<article>
+<div class="article-content">
+<h3><a href="https://www.infowars.com/trumps-america-first-economy-secures-10-year-employment-high-for-manufacturing-workers/">Trump’s ‘America First’ Economy Secures 10-Year Employment High for Manufacturing Workers</a></h3>
+<h4 class="entry-subtitle">In June 2018, Trump’s booming economy delivered an additional 36,000 manufacturing jobs for American workers</h4>
+<div class="category-name">
+<span class="blue-cat"><i class="fa fa-bookmark"></i>
+<a href="https://www.infowars.com/category/economy/">
+Economy </a>
+</span>
+</div>
+<span class="comment-count"><a class="disqus-comment-count" href=" https://www.infowars.com/trumps-america-first-economy-secures-10-year-employment-high-for-manufacturing-workers/#disqus_thread" rel="bookmark" title="Permanent Link to Trump’s ‘America First’ Economy Secures 10-Year Employment High for Manufacturing Workers"></a></span>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<div class="load-more-news">
+<a href="" class="load-more featured">Load More Stories</a>
+</div>
+</div>
+</div>
+</main>
+<div class="sidebar pure-u-1 pure-u-sm-1 pure-u-lg-1-4 pure-u-xl-1-4">
+<div id="secondary" class="widget-area" role="complementary">
+<aside id="php_widget-143" class="widget-odd widget-first widget-1 widget php_widget"><h1 class="widget-title-wp">Side Hero Ad</h1><style type="text/css">
+#php_widget-131,
+#php_widget-140,
+#php_widget-143 {
+	padding: 0px;
+	margin: 0px;
+}
+#php_widget-104,
+.today-on-the-show-content { 
+	margin-bottom: 0px!important;
+}
+.alignleft,
+.alignright {
+	margin-top: 1em!important;
+}
+.alignleft {
+	margin-right: 0.5em!important;
+}
+.alignright {
+	margin-left: 0.5em!important;
+}
+.article-ad {
+	margin-right: 0.5em!important;
+	margin-top: 1em!important;
+	margin-bottom: 0em!important;
+}
+@media (max-width: 768px) {
+	img.hero-ad-special {
+		width: 100%;
+	}
+}
+</style>
+<a href="https://www.infowars.com/app/?ims=vqdtg&utm_campaign=Infowars+Homepage&utm_source=Infowars.com&utm_medium=Banner&utm_content=InfowarsOfficial-hero-385" target="_blank">
+<img src="https://www.infowars.com/wp-content/uploads/2018/07/InfowarsOfficial-hero-385-2.png" class="hero-ad-special" />
+</a></aside><aside id="php_widget-104" class="widget-even widget-2 widget php_widget"><h1 class="widget-title-wp">Today on the Show</h1><script type="text/javascript">
+var content;
+content = jQuery.get('/wp-content/uploads/static/tots.html', function(data){
+  content = data;
+}).done(function() {
+  jQuery('.today-on-the-show-content').html(content);
+  jQuery('.today-on-the-show-content .today-shorten').expander({
+      slicePoint: 168,
+      expandText: 'Read More <i class="fa fa-chevron-down"></i>',
+      userCollapseText: 'Read Less <i class="fa fa-chevron-up"></i>'
+  });
+});
+</script>
+<div class="widget-spacer"></div>
+<div id="today-on-the-show-widget">
+<h1 class="widget-title">Today on the Alex Jones Show</h1>
+<hr class="divider">
+<div class="sidebarbox">
+<div class="today-on-the-show-content"></div>
+<div style="clear:both;"></div>
+</div>
+</div></aside><aside id="php_widget-96" class="widget-odd widget-3 widget php_widget"><h1 class="widget-title-wp">Top Stories</h1><div id="top-stories-widget">
+<h1 class="widget-title">Latest Stories</h1>
+<hr class="divider">
+<ul class="stansberry_list">
+<li class="stansberry_item">
+<a href="https://www.infowars.com/watch-live-trump-taking-heat-over-brexit-comments-world-forgets-obama-schemed-to-kill-it/" rel="bookmark" title="Permanent Link to Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It">Watch Live: Trump Taking Heat Over Brexit Comments, World Forgets Obama Schemed To Kill It</a>
+</li>
+<li class="stansberry_item">
+<a href="https://www.infowars.com/london-anti-trump-protest-ridiculed-as-baby-blimp-disappoints/" rel="bookmark" title="Permanent Link to London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints">London Anti-Trump Protest Ridiculed as &#8216;Baby Blimp&#8217; Disappoints</a>
+</li>
+<li class="stansberry_item">
+<a href="https://www.infowars.com/trump-says-migration-has-changed-europes-fabric-as-un-chief-calls-it-a-positive-global-phenomenon/" rel="bookmark" title="Permanent Link to Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’">Trump Says Migration Has Changed Europe’s ‘Fabric,’ As UN Chief Calls It a ‘Positive Global Phenomenon’</a>
+</li>
+<li class="stansberry_item">
+<a href="https://www.infowars.com/kevin-mccarthy-dems-will-get-to-vote-to-abolish-all-immigration-enforcement-before-midterms/" rel="bookmark" title="Permanent Link to Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms">Kevin McCarthy: Dems Will Get to Vote to Abolish All Immigration Enforcement Before Midterms</a>
+</li>
+<li class="stansberry_item">
+<a href="https://www.infowars.com/cnn-commentator-maxine-could-be-2020-democrat-nominee-for-president/" rel="bookmark" title="Permanent Link to CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President">CNN Commentator: Maxine Could Be 2020 Democrat Nominee For President</a>
+</li>
+<li class="stansberry_item">
+<a href="https://www.infowars.com/majority-of-russians-believe-shadowy-global-government-exists/" rel="bookmark" title="Permanent Link to Majority Of Russians Believe Shadowy Global Government Exists">Majority Of Russians Believe Shadowy Global Government Exists</a>
+</li>
+</ul>
+</div></aside><aside id="php_widget-74" class="widget-even widget-4 widget php_widget"><h1 class="widget-title-wp">Most Popular</h1><script type='text/javascript'>
+jQuery.get('/rsspptv/disqus_content.html', function(data) {
+jQuery('#mostpopular1').html(data);
+});
+</script>
+<div id="mostpopular1"></div></aside><aside id="php_widget-132" class="widget-odd widget-5 widget php_widget"><h1 class="widget-title-wp">Signup</h1><style type="text/css">
+	div#newsletter-side-widget {
+		padding: 10px;
+	}
+	div#newsletter-side-widget h1 {
+		text-align: center;
+	}
+	div#newsletter-side-widget hr.divider,
+	div#newsletter-side-widget p.subtext {
+		margin-bottom: 10px!important;
+	}
+	div#newsletter-side-widget ul.stansberry-form {
+		padding: 15px 25px;
+		background-color: #1c1c1c;
+	}
+	div#newsletter-side-widget ul.stansberry-form li.stansberry-item input[type="submit"],
+	div#newsletter-side-widget ul.stansberry-form li.stansberry-item input[type="text"] {
+		width: 100%;
+		padding: 15px;
+	}
+	div#newsletter-side-widget ul.stansberry-form li.stansberry-item input[type="text"] {
+		margin-bottom: 5px;
+	}
+	div#newsletter-side-widget ul.stansberry-form li.stansberry-item input[type="submit"] {
+		border: 0px;
+		color: #fff;
+		font-size: 14pt;
+		font-weight: 700;
+		box-shadow: none;
+		text-shadow: none;
+		border-radius: 0px;
+		background-color: #d31d1d;
+	}
+	div#newsletter-side-widget ul.stansberry-form li.stansberry-item input,
+	div#newsletter-side-widget p.subtext {
+		font-family: 'Oswald'!important;
+	}
+	div#newsletter-side-widget p.subtext {
+		text-align: center;
+		line-height: 1.5em;
+		font-size: 12pt;
+	}
+</style>
+<div id="newsletter-side-widget">
+<h1 class="widget-title">Get Informed</h1>
+<hr class="divider">
+<p class="subtext">Get the latest breaking news &amp; specials from Alex Jones and the Infowars crew.</p>
+<ul class="stansberry-form">
+<form action="https://infowars.us5.list-manage.com/subscribe/post?u=507a134f1f975eaeabbd7d266&amp;id=e12661a83c" method="post" name="mc-embedded-subscribe-form" target="_blank">
+<li class="stansberry-item"><input type="text" name="FNAME" placeholder="First Name" /></li>
+<li class="stansberry-item"><input type="text" name="LNAME" placeholder="Last Name" /></li>
+<li class="stansberry-item"><input type="text" name="EMAIL" placeholder="Email Address" /></li>
+<li class="stansberry-item"><input type="submit" name="subscribe" value="SUBSCRIBE" /></li>
+</form>
+</ul>
+</div></aside><aside id="php_widget-97" class="widget-even widget-6 widget php_widget"><h1 class="widget-title-wp">From the store</h1><div id="store-widget">
+<h1 class="widget-title">Visit Our Store</h1><a href="http://www.infowarsstore.com/" title="Visit Store" class="view-all">Shop Here<i class="fa fa-long-arrow-right"></i></a>
+<hr class="blue-divider">
+<div class="pure-g dynamic-store start s-widget">
+<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 store-description">
+<a class="product-title" target="_blank" href="http://store.infowars.com/Survival-Shield-X-2-2-Pack_p_1323.html"><h2></h2></a>
+<span class="grey">Your Price: <span class="your-price"></span></span>
+<span class="red">On Sale: <span class="sale-price"></span></span>
+
+<p class="product-description"></p>
+</div>
+<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-2 pure-u-xl-1-2 store-image">
+<img class="product img-responsive" src="">
+<a target="_blank" class="buy-now product-link" href="http://store.infowars.com/Survival-Shield-X-2-2-Pack_p_1323.html">Buy Now</a>
+<br />
+<a class="learn-more product-info" href="http://store.infowars.com/Survival-Shield-X-2-2-Pack_p_1323.html">Learn More</a>
+</div>
+</div>
+</div></aside><aside id="php_widget-98" class="widget-odd widget-7 widget php_widget"><h1 class="widget-title-wp">Watch the news</h1></aside><aside id="php_widget-10" class="widget-even widget-8 widget php_widget"><h1 class="widget-title-wp">Featured Videos</h1><div id="featured-videos">
+<h1 class="widget-title">FEATURED VIDEOS</h1>
+<hr class="divider">
+<div class="sidebarbox">
+<div class="video"><iframe class="youtube-player" width="280" height="205" src="
+https://www.youtube.com/embed/ztoK32ONUVY
+"></iframe></div><div class="videotitle"><strong>UK Trump Protesters Are Complete Idiots - </strong> See the rest on the <a href="http://www.youtube.com/user/TheAlexJonesChannel" target="_blank">Alex Jones YouTube channel</a>.</div><br /><div class="video"><iframe class="youtube-player" width="280" height="205" src="
+https://www.youtube.com/embed/HjCf4zJ3_bU
+"></iframe></div><div class="videotitle"><strong>The Trump Baby Balloon - </strong> See the rest on the <a href="http://www.youtube.com/user/TheAlexJonesChannel" target="_blank">Alex Jones YouTube channel</a>.</div><br />
+</div>
+</div></aside><aside id="php_widget-11" class="widget-odd widget-9 widget php_widget"><h1 class="widget-title-wp">ILLUSTRATION</h1><h1 class="widget-title">Illustration</h1>
+<hr class="divider" />
+<div class="political-sidebar">
+<div class="rl-gallery-container rl-loading" id="rl-gallery-container-1" data-gallery_id="514059"> <ul class="rl-gallery rl-basicslider-gallery " id="rl-gallery-1" data-gallery_no="1"> <li class="rl-gallery-item"><a href="https://www.infowars.com/wp-content/uploads/2018/05/real-rus-coll-768x565.jpg" title="" data-rl_title="" class="rl-gallery-link" data-rl_caption="" data-rel="lightbox-gallery-1"><img src="https://www.infowars.com/wp-content/uploads/2018/05/real-rus-coll-380x218.jpg" width="380" height="218" /></a></li><li class="rl-gallery-item"><a href="https://www.infowars.com/wp-content/uploads/2018/05/balloon-loon235-768x537.jpg" title="" data-rl_title="" class="rl-gallery-link" data-rl_caption="" data-rel="lightbox-gallery-1"><img src="https://www.infowars.com/wp-content/uploads/2018/05/balloon-loon235-380x218.jpg" width="380" height="218" /></a></li><li class="rl-gallery-item"><a href="https://www.infowars.com/wp-content/uploads/2018/05/nato-fair-share1235.jpg" title="" data-rl_title="" class="rl-gallery-link" data-rl_caption="" data-rel="lightbox-gallery-1"><img src="https://www.infowars.com/wp-content/uploads/2018/05/nato-fair-share1235-380x218.jpg" width="380" height="218" /></a></li><li class="rl-gallery-item"><a href="https://www.infowars.com/wp-content/uploads/2018/05/millions-die.jpg" title="" data-rl_title="" class="rl-gallery-link" data-rl_caption="" data-rel="lightbox-gallery-1"><img src="https://www.infowars.com/wp-content/uploads/2018/05/millions-die-380x218.jpg" width="380" height="218" /></a></li><li class="rl-gallery-item"><a href="https://www.infowars.com/wp-content/uploads/2018/05/meltdown.jpg" title="" data-rl_title="" class="rl-gallery-link" data-rl_caption="" data-rel="lightbox-gallery-1"><img src="https://www.infowars.com/wp-content/uploads/2018/05/meltdown-380x218.jpg" width="380" height="218" /></a></li><li class="rl-gallery-item"><a href="https://www.infowars.com/wp-content/uploads/2018/05/kavanaugh-dem.jpg" title="" data-rl_title="" class="rl-gallery-link" data-rl_caption="" data-rel="lightbox-gallery-1"><img src="https://www.infowars.com/wp-content/uploads/2018/05/kavanaugh-dem-380x218.jpg" width="380" height="218" /></a></li> </ul> </div></div></aside><aside id="php_widget-79" class="widget-even widget-last widget-10 widget php_widget"><h1 class="widget-title-wp">Poll</h1><h1 class="polls-title">POLLS</h1>
+<hr class="grey-divider">
+<div class="sidebarbox">
+<div>
+<div id="polls-1179" class="wp-polls">
+<form id="polls_form_1179" class="wp-polls-form" action="/index.php" method="post">
+<p style="display: none;"><input type="hidden" id="poll_1179_nonce" name="wp-polls-nonce" value="d805f05718" /></p>
+<p style="display: none;"><input type="hidden" name="poll_id" value="1179" /></p>
+<p style="text-align: left;">Will Hillary Clinton run for prez in 2020?</p><div id="polls-1179-ans" class="wp-polls-ans"><ul class="wp-polls-ul">
+<li><input type="radio" id="poll-answer-4599" name="poll_1179" value="4599" /> <label for="poll-answer-4599">Yes, she'll run</label></li>
+<li><input type="radio" id="poll-answer-4600" name="poll_1179" value="4600" /> <label for="poll-answer-4600">No, she won't run</label></li>
+<li><input type="radio" id="poll-answer-4601" name="poll_1179" value="4601" /> <label for="poll-answer-4601">She'll be dead by then</label></li>
+</ul><p style="text-align: center;"><input type="button" name="vote" value="   Vote   " class="Buttons" onclick="poll_vote(1179);" onkeypress="poll_result(1179);" /></p><p style="text-align: center;"><a href="#ViewPollResults" onclick="poll_result(1179); return false;" onkeypress="poll_result(1179); return false;" title="View Results Of This Poll">View Results</a></p></div>
+</form>
+</div>
+</div>
+</div><br style="clear:both;" />
+<hr class="grey-divider">
+</aside></div>
+</div>
+</div>
+</div>
+<footer id="colophon" class="site-footer" role="contentinfo">
+<div class="container" id="footer-container">
+<div id="footer">
+<div class="footer-left">
+<img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/footer-logo.png">
+<div class="copyright">
+&copy; 2018 Infowars.com is a Free Speech Systems, LLC Company.<br />
+All rights reserved. <a href="/digital-millennium-copyright-act/">Digital Millennium Copyright Act Notice</a>.
+</div>
+</div>
+<div class="footer-right">
+<div class="column three">
+<div class="menu-navigation-footer1-container"><ul id="menu-navigation-footer1" class="menu"><li id="menu-item-216948" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216948"><a href="/listen-on-the-internet/">Radio</a></li>
+<li id="menu-item-216939" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216939"><a href="https://www.infowars.com/watch-alex-jones-show/">Video</a></li>
+<li id="menu-item-216940" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216940"><a href="http://prisonplanet.tv/">PPTV</a></li>
+<li id="menu-item-216941" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216941"><a href="https://www.infowarsstore.com/">Store</a></li>
+<li id="menu-item-216942" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216942"><a href="https://www.infowarsstore.com/health-and-wellness/infowars-life.html">Infowars Life</a></li>
+<li id="menu-item-216936" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216936"><a href="https://www.infowars.com/terms-of-service/">T.O.S.</a></li>
+</ul></div> </div>
+<div class="column three">
+<div class="menu-footer-navigation2-container"><ul id="menu-footer-navigation2" class="menu"><li id="menu-item-216943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216943"><a href="/listen-to-the-radio-show-archive/">Archive</a></li>
+<li id="menu-item-216951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216951"><a href="https://www.infowars.com/watch-alex-jones-show/">Watch Alex Jones Show</a></li>
+<li id="menu-item-216944" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216944"><a href="/listen-to-the-radio-show-archive/">Most Recent</a></li>
+<li id="menu-item-216945" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216945"><a href="/digital-millennium-copyright-act/">D.M.C.A.</a></li>
+<li id="menu-item-375296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-375296"><a href="https://www.infowars.com/corrections/">Corrections</a></li>
+</ul></div> </div>
+<div class="column three">
+<div class="menu-footer-navigation3-container"><ul id="menu-footer-navigation3" class="menu"><li id="menu-item-216950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216950"><a href="https://www.infowars.com/about-alex-jones-show/">About Alex Jones Show</a></li>
+<li id="menu-item-216946" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216946"><a href="/newsletter-sign-up/">Subscribe</a></li>
+<li id="menu-item-216947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216947"><a href="/contact/">Contact</a></li>
+</ul></div> </div>
+</div>
+<div class="mobile-right">
+<img src="https://www.infowars.com/wp-content/themes/infowars-sitegoals/images/footer-logo.png">
+<div class="copyright">
+&copy; 2018 Infowars.com is a Free Speech Systems, LLC Company.<br />
+All rights reserved. Digital Millennium Copyright Act Notice.
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+</footer><br style="clear:both;" />
+</div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'nfocom'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script type="text/javascript">
+  function replace(divid, content) {
+    jQuery(divid).html("");
+    jQuery(divid).html(jQuery(content).html());
+}
+</script>
+<script type="text/javascript">
+var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true; js.id = 'AddShoppers';
+js.src = ('https:' == document.location.protocol ? 'https://shop.pe/widget/' : 'http://cdn.shop.pe/widget/') + 'widget_async.js#57363c36bbddbd30ac6bd74f';
+document.getElementsByTagName("head")[0].appendChild(js);
+</script>
+<button id="responsive-menu-button" class="responsive-menu-button responsive-menu-boring
+        " type="button" aria-label="Menu">
+<span class="responsive-menu-box">
+<span class="responsive-menu-inner"></span>
+</span>
+<span class="responsive-menu-label responsive-menu-label-bottom">
+<span class="responsive-menu-button-text"></span>
+</span>
+</button><div id="responsive-menu-container" class="slide-left">
+<div id="responsive-menu-wrapper">
+<div id="responsive-menu-title">
+<a href="/" target="_self">
+</a>
+<a href="/" target="_self">
+Home
+</a>
+</div>
+<ul id="responsive-menu" class=""><li id="responsive-menu-item-217431" class="first-nav menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item responsive-menu-item responsive-menu-current-item"><a href="/" class="responsive-menu-item-link"><i class="fa fa-icon"></i></a></li><li id="responsive-menu-item-216918" class="alex-jones-radio-show-link menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a title="Alex Jones Radio Show" href="/watch-alex-jones-show" class="responsive-menu-item-link">Radio Show<div class="responsive-menu-subarrow">▼</div></a><ul class='responsive-menu-submenu responsive-menu-submenu-depth-1'><li id="responsive-menu-item-216949" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/watch-alex-jones-show/" class="responsive-menu-item-link">Watch</a></li><li id="responsive-menu-item-216919" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/about-alex-jones/" class="responsive-menu-item-link">About Alex Jones</a></li><li id="responsive-menu-item-216934" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/listen-to-the-radio-show-archive/" class="responsive-menu-item-link">Radio Show Archive</a></li></ul></li><li id="responsive-menu-item-216953" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a href="https://www.infowars.com/news/" class="responsive-menu-item-link">News<div class="responsive-menu-subarrow">▼</div></a><ul class='responsive-menu-submenu responsive-menu-submenu-depth-1'><li id="responsive-menu-item-216938" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/special-reports/" class="responsive-menu-item-link">Special Reports</a></li><li id="responsive-menu-item-216922" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/us-news/" class="responsive-menu-item-link">U.S. News</a></li><li id="responsive-menu-item-216929" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/world-news/" class="responsive-menu-item-link">World News</a></li><li id="responsive-menu-item-216921" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/economy/" class="responsive-menu-item-link">Economy</a></li><li id="responsive-menu-item-291901" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/government/" class="responsive-menu-item-link">Government</a></li><li id="responsive-menu-item-216928" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/world-at-war/" class="responsive-menu-item-link">World at War</a></li><li id="responsive-menu-item-217396" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/health/" class="responsive-menu-item-link">Health</a></li><li id="responsive-menu-item-216926" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/science-technology/" class="responsive-menu-item-link">Science &#038; Technology</a></li><li id="responsive-menu-item-291902" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/globalism/" class="responsive-menu-item-link">Globalism</a></li><li id="responsive-menu-item-216924" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://www.infowars.com/category/hot-news/" class="responsive-menu-item-link">Hot News</a></li></ul></li><li id="responsive-menu-item-216930" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a title="Multimedia" href="/videos/" class="responsive-menu-item-link">Videos<div class="responsive-menu-subarrow">▼</div></a><ul class='responsive-menu-submenu responsive-menu-submenu-depth-1'><li id="responsive-menu-item-222579" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a href="/videos/" class="responsive-menu-item-link">All Videos</a></li><li id="responsive-menu-item-216952" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/nightly-news/" class="responsive-menu-item-link">Nightly News</a></li><li id="responsive-menu-item-216931" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="http://prisonplanet.tv" class="responsive-menu-item-link">PrisonPlanet.tv</a></li></ul></li><li id="responsive-menu-item-216932" class="bold menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="https://www.infowarsstore.com?ims=gtpqq&#038;utm_campaign=Top+Of+Page&#038;utm_source=Infowars.com&#038;utm_medium=Magento&#038;utm_content=Top+Of+Page" class="responsive-menu-item-link">Store</a></li><li id="responsive-menu-item-216933" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a href="/category/featured-stories/" class="responsive-menu-item-link">Top Stories</a></li><li id="responsive-menu-item-216956" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/breaking-news/" class="responsive-menu-item-link">Breaking News</a></li><li id="responsive-menu-item-216957" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a href="https://www.infowars.com/contact/" class="responsive-menu-item-link">Contact<div class="responsive-menu-subarrow">▼</div></a><ul class='responsive-menu-submenu responsive-menu-submenu-depth-1'><li id="responsive-menu-item-467689" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/media-inquiries/" class="responsive-menu-item-link">Media Inquiries</a></li><li id="responsive-menu-item-257826" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/affiliates/" class="responsive-menu-item-link">Affiliates</a></li><li id="responsive-menu-item-266306" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://www.infowars.com/contributors/" class="responsive-menu-item-link">Contributors</a></li><li id="responsive-menu-item-397438" class=" menu-item menu-item-type-post_type menu-item-object-post responsive-menu-item"><a href="https://www.infowars.com/2017-guide-to-infowars-social-media-v1/" class="responsive-menu-item-link">Social Media</a></li></ul></li></ul> <div id="responsive-menu-additional-content"></div> </div>
+</div>
+<link rel='stylesheet' id='responsive-lightbox-gallery-css' href='https://www.infowars.com/wp-content/plugins/responsive-lightbox/css/gallery.css?ver=2.0.4' type='text/css' media='all' />
+<style id='responsive-lightbox-gallery-inline-css' type='text/css'>
+
+					.rl-gallery .rl-gallery-link {
+						border: 0px solid #000000;
+					}
+					.rl-gallery .rl-gallery-link .rl-gallery-item-title {
+						color: #ffffff;
+					}
+					.rl-gallery .rl-gallery-link .rl-gallery-item-caption {
+						color: #cccccc;
+					}
+					.rl-gallery .rl-gallery-link .rl-gallery-caption,
+					.rl-gallery .rl-gallery-link:after {
+						background-color: rgba( 0, 0, 0, 0.8 );
+					}
+					[class^="rl-hover-icon-"] .rl-gallery-link:before,
+					[class*=" rl-hover-icon-"] .rl-gallery-link:before {
+						color: #ffffff;
+						background-color: rgba( 0, 0, 0, 0.8 );
+					}
+				
+</style>
+<link rel='stylesheet' id='responsive-lightbox-basicslider-gallery-css' href='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/slippry/slippry.min.css?ver=2.0.4' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.infowars.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"nfocom"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/disqus-comment-system/public/js/comment_count.js?ver=3.0.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var emailL10n = {"ajax_url":"https:\/\/www.infowars.com\/wp-admin\/admin-ajax.php","max_allowed":"5","text_error":"The Following Error Occurs:","text_name_invalid":"- Your Name is empty\/invalid","text_email_invalid":"- Your Email is empty\/invalid","text_remarks_invalid":"- Your Remarks is invalid","text_friend_names_empty":"- Friend Name(s) is empty","text_friend_name_invalid":"- Friend Name is empty\/invalid: ","text_max_friend_names_allowed":"- Maximum 5 Friend Names allowed","text_friend_emails_empty":"- Friend Email(s) is empty","text_friend_email_invalid":"- Friend Email is invalid: ","text_max_friend_emails_allowed":"- Maximum 5 Friend Emails allowed","text_friends_tally":"- Friend Name(s) count does not tally with Friend Email(s) count","text_image_verify_empty":"- Image Verification is empty"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/wp-email/email-js.js?ver=2.67.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/www.infowars.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"0","show_fading":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/wp-polls/polls-js.js?ver=2.73.8'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/js/navigation.js?ver=20120206'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/themes/infowars-sitegoals/js/skip-link-focus-fix.js?ver=20130115'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-includes/js/wp-embed.min.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/responsive-lightbox/assets/slippry/slippry.min.js?ver=2.0.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rlArgsBasicSliderGallery2 = "{\"adaptive_height\":1,\"loop\":0,\"captions\":\"overlay\",\"init_single\":1,\"responsive\":1,\"preload\":\"visible\",\"pager\":1,\"controls\":1,\"hide_on_end\":1,\"slide_margin\":0,\"transition\":\"fade\",\"kenburns_zoom\":120,\"speed\":800,\"easing\":\"swing\",\"continuous\":1,\"use_css\":1,\"slideshow\":0,\"slideshow_direction\":\"next\",\"slideshow_hover\":1,\"slideshow_hover_delay\":100,\"slideshow_delay\":500,\"slideshow_pause\":3000}";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.infowars.com/wp-content/plugins/responsive-lightbox/js/front-basicslider.js?ver=2.0.4'></script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+<script>jQuery(document).ready(function($){var ResponsiveMenu ={trigger: '#responsive-menu-button',animationSpeed: 500,breakpoint: 768,pushButton: 'off',animationType: 'slide',animationSide: 'left',pageWrapper: '',isOpen: false,triggerTypes: 'click',activeClass: 'is-active',container: '#responsive-menu-container',openClass: 'responsive-menu-open',accordion: 'off',activeArrow: '▲',inactiveArrow: '▼',wrapper: '#responsive-menu-wrapper',closeOnBodyClick: 'off',closeOnLinkClick: 'off',itemTriggerSubMenu: 'off',linkElement: '.responsive-menu-item-link',subMenuTransitionTime: 200,openMenu: function(){$(this.trigger).addClass(this.activeClass);$('html').addClass(this.openClass);$('.responsive-menu-button-icon-active').hide();$('.responsive-menu-button-icon-inactive').show();this.setButtonTextOpen();this.setWrapperTranslate();this.isOpen = true},closeMenu: function(){$(this.trigger).removeClass(this.activeClass);$('html').removeClass(this.openClass);$('.responsive-menu-button-icon-inactive').hide();$('.responsive-menu-button-icon-active').show();this.setButtonText();this.clearWrapperTranslate();this.isOpen = false},setButtonText: function(){if($('.responsive-menu-button-text-open').length > 0 && $('.responsive-menu-button-text').length > 0){$('.responsive-menu-button-text-open').hide();$('.responsive-menu-button-text').show()}},setButtonTextOpen: function(){if($('.responsive-menu-button-text').length > 0 && $('.responsive-menu-button-text-open').length > 0){$('.responsive-menu-button-text').hide();$('.responsive-menu-button-text-open').show()}},triggerMenu: function(){this.isOpen ? this.closeMenu() : this.openMenu()},triggerSubArrow: function(subarrow){var sub_menu = $(subarrow).parent().siblings('.responsive-menu-submenu');var self = this;if(this.accordion == 'on'){var top_siblings = sub_menu.parents('.responsive-menu-item-has-children').last().siblings('.responsive-menu-item-has-children');var first_siblings = sub_menu.parents('.responsive-menu-item-has-children').first().siblings('.responsive-menu-item-has-children');top_siblings.children('.responsive-menu-submenu').slideUp(self.subMenuTransitionTime, 'linear').removeClass('responsive-menu-submenu-open');top_siblings.each(function(){$(this).find('.responsive-menu-subarrow').first().html(self.inactiveArrow);$(this).find('.responsive-menu-subarrow').first().removeClass('responsive-menu-subarrow-active')});first_siblings.children('.responsive-menu-submenu').slideUp(self.subMenuTransitionTime, 'linear').removeClass('responsive-menu-submenu-open');first_siblings.each(function(){$(this).find('.responsive-menu-subarrow').first().html(self.inactiveArrow);$(this).find('.responsive-menu-subarrow').first().removeClass('responsive-menu-subarrow-active')})}if(sub_menu.hasClass('responsive-menu-submenu-open')){sub_menu.slideUp(self.subMenuTransitionTime, 'linear').removeClass('responsive-menu-submenu-open');$(subarrow).html(this.inactiveArrow);$(subarrow).removeClass('responsive-menu-subarrow-active')}else{sub_menu.slideDown(self.subMenuTransitionTime, 'linear').addClass('responsive-menu-submenu-open');$(subarrow).html(this.activeArrow);$(subarrow).addClass('responsive-menu-subarrow-active')}},menuHeight: function(){return $(this.container).height()},menuWidth: function(){return $(this.container).width()},wrapperHeight: function(){return $(this.wrapper).height()},setWrapperTranslate: function(){switch(this.animationSide){case 'left':translate = 'translateX(' + this.menuWidth() + 'px)';break;case 'right':translate = 'translateX(-' + this.menuWidth() + 'px)';break;case 'top':translate = 'translateY(' + this.wrapperHeight() + 'px)';break;case 'bottom':translate = 'translateY(-' + this.menuHeight() + 'px)';break}if(this.animationType == 'push'){$(this.pageWrapper).css({'transform':translate});$('html, body').css('overflow-x', 'hidden')}if(this.pushButton == 'on'){$('#responsive-menu-button').css({'transform':translate})}},clearWrapperTranslate: function(){var self = this;if(this.animationType == 'push'){$(this.pageWrapper).css({'transform':''});setTimeout(function(){$('html, body').css('overflow-x', '')}, self.animationSpeed)}if(this.pushButton == 'on'){$('#responsive-menu-button').css({'transform':''})}},init: function(){var self = this;$(this.trigger).on(this.triggerTypes, function(e){e.stopPropagation();self.triggerMenu()});$(this.trigger).mouseup(function(){$(self.trigger).blur()});$('.responsive-menu-subarrow').on('click', function(e){e.preventDefault();e.stopPropagation();self.triggerSubArrow(this)});$(window).resize(function(){if($(window).width() > self.breakpoint){if(self.isOpen){self.closeMenu()}}else{if($('.responsive-menu-open').length>0){self.setWrapperTranslate()}}});if(this.closeOnLinkClick == 'on'){$(this.linkElement).on('click', function(e){e.preventDefault();if(self.itemTriggerSubMenu == 'on' && $(this).is('.responsive-menu-item-has-children > ' + self.linkElement)){return}old_href = $(this).attr('href');old_target = typeof $(this).attr('target') == 'undefined' ? '_self' : $(this).attr('target');if(self.isOpen){if($(e.target).closest('.responsive-menu-subarrow').length){return}self.closeMenu();setTimeout(function(){window.open(old_href, old_target)}, self.animationSpeed)}})}if(this.closeOnBodyClick == 'on'){$(document).on('click', 'body', function(e){if(self.isOpen){if($(e.target).closest('#responsive-menu-container').length || $(e.target).closest('#responsive-menu-button').length){return}}self.closeMenu()})}if(this.itemTriggerSubMenu == 'on'){$('.responsive-menu-item-has-children > ' + this.linkElement).on('click', function(e){e.preventDefault();self.triggerSubArrow($(this).children('.responsive-menu-subarrow').first())})}}};ResponsiveMenu.init()});</script><div class="hidden"><div class="dynamic-products">
+<div class="product1">
+<div class="title">Secret 12 &#8211; Vitamin B12</div>
+<div class="offer">Limited Advanced Release</div>
+<div class="price">39.95</div>
+<div class="discount">29.95</div>
+<div class="description">Discover the benefits of super advanced vitamin B-12 with the Infowars Life Secret 12 proprietary formula.</div>
+<div class="image">https://www.infowars.com/wp-content/uploads/2015/10/s12-300.jpg</div>
+<div class="url">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+<div class="learn-more">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+</div>
+<div class="product2">
+<div class="title">Secret 12 &#8211; Vitamin B12</div>
+<div class="offer"></div>
+<div class="price">39.95</div>
+<div class="discount">29.95</div>
+<div class="description">Discover the benefits of super advanced vitamin B-12 with the Infowars Life Secret 12 proprietary formula.</div>
+<div class="image">https://www.infowars.com/wp-content/uploads/2015/10/s12-300.jpg</div>
+<div class="url">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+<div class="learn-more">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+</div>
+<div class="product3">
+<div class="title">Secret 12 &#8211; Vitamin B12</div>
+<div class="offer"></div>
+<div class="price">39.95</div>
+<div class="discount">29.95</div>
+<div class="description">Discover the benefits of super advanced vitamin B-12 with the Infowars Life Secret 12 proprietary formula.</div>
+<div class="image">https://www.infowars.com/wp-content/uploads/2015/10/s12-300.jpg</div>
+<div class="url">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+<div class="learn-more">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+</div>
+<div class="product4">
+<div class="title">Secret 12 &#8211; Vitamin B12</div>
+<div class="offer"></div>
+<div class="price">39.95</div>
+<div class="discount">29.95</div>
+<div class="description">Discover the benefits of super advanced vitamin B-12 with the Infowars Life Secret 12 proprietary formula.</div>
+<div class="image">https://www.infowars.com/wp-content/uploads/2015/10/s12-300.jpg</div>
+<div class="url">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+<div class="learn-more">https://www.infowarsstore.com/health-and-wellness/infowars-life/secret-12-vitamin-b12-2.html?ims=idwpx&utm_campaign=Secret+12&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Secret12</div>
+</div>
+<div class="product5">
+<div class="title">Brain Force Plus</div>
+<div class="offer"></div>
+<div class="price">39.95</div>
+<div class="discount">19.95</div>
+<div class="description">Flip the switch and supercharge your state of mind with the all-new Brain Force PLUS</div>
+<div class="image">https://www.infowars.com/wp-content/uploads/2016/02/bf-300-1.jpg</div>
+<div class="url">https://www.infowarsstore.com/health-and-wellness/infowars-life/brain-force.html?ims=akmnp&utm_campaign=Brain+Force+Plus&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Brain+Force+Plus</div>
+<div class="learn-more">https://www.infowarsstore.com/health-and-wellness/infowars-life/brain-force.html?ims=akmnp&utm_campaign=Brain+Force+Plus&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Brain+Force+Plus</div>
+</div>
+<div class="product6">
+<div class="title">Brain Force Plus</div>
+<div class="offer"></div>
+<div class="price">39.95</div>
+<div class="discount">19.95</div>
+<div class="description">Flip the switch and supercharge your state of mind with the all-new Brain Force PLUS</div>
+<div class="image">https://www.infowars.com/wp-content/uploads/2016/02/bf-300-1.jpg</div>
+<div class="url">https://www.infowarsstore.com/health-and-wellness/infowars-life/brain-force.html?ims=akmnp&utm_campaign=Brain+Force+Plus&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Brain+Force+Plus</div>
+<div class="learn-more">https://www.infowarsstore.com/health-and-wellness/infowars-life/brain-force.html?ims=akmnp&utm_campaign=Brain+Force+Plus&utm_source=Infowars+Widget&utm_medium=Infowars.com&utm_content=Brain+Force+Plus</div>
+</div>
+</div></div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0fc1bd6d66","applicationID":"124250857","transactionName":"ZABbYkVVVhcCBUwNV11KbEReG1EKBwNASkhbFQ==","queueTime":0,"applicationTime":5,"atts":"SEdYFA1PRRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
